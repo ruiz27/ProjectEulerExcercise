@@ -9,13 +9,19 @@ public class Problem4 {
 		Find the largest palindrome made from the product of two 3-digit numbers.
 	 * @return
 	 */
-	public void doExcercise(Integer a) {
-		for(int i=a;i<=a;i--) {
-			if(isPalindromic(a*i)) {
-				System.out.println(a*i);
-				break;
+	public Integer doExcercise(Integer a) {
+		
+		for(Integer i=a;i<=a;i--) {
+			if(i.toString().length()==3) {
+				if(isPalindromic(a*i)) {
+					System.out.println("The largest palindrome made from the product of two 3-digit numbers is "+ a*i + " = "+a+"x"+i);
+					break;
+				}
+			}else {
+				return doExcercise(a-1);
 			}
 		}
+		return 0;
 	}
 	
 	private boolean isPalindromic(Integer number) {
@@ -24,8 +30,10 @@ public class Problem4 {
 		return reverseNumber.equals(numberString);
 	}
 	
+	
 	public static void main(String args[]) {
 		Problem4 solve = new Problem4();
 		solve.doExcercise(999);
+		//System.out.println(solve.findPalindromic(999, 999));
 	}
 }
