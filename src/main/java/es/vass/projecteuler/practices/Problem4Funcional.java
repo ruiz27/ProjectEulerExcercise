@@ -12,11 +12,9 @@ public class Problem4Funcional {
 
 		Predicate<Integer> isPalindromic = p -> p.toString().equals(new StringBuilder(p).reverse().toString());
 		IntUnaryOperator increment = p -> p + 1;
-		Integer min = 100;
-		Integer max = 999;
 
-		List<Integer> list1 = IntStream.range(min, max).map(increment).boxed().collect(Collectors.toList());
-		List<Integer> list2 = IntStream.range(min, max).map(increment).boxed().collect(Collectors.toList());
+		List<Integer> list1 = IntStream.range(100, 999).map(increment).boxed().collect(Collectors.toList());
+		List<Integer> list2 = IntStream.range(100, 999).map(increment).boxed().collect(Collectors.toList());
 
 		List<Integer> result = list1.stream().flatMap(s1 -> list2.stream().map(s2 -> s1 * s2))
 				.collect(Collectors.toList());
