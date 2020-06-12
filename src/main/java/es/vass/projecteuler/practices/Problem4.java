@@ -30,7 +30,6 @@ public class Problem4 {
 		return reverseNumber.equals(numberString);
 	}
 	
-	
 	public static void main(String args[]) {
 		Problem4 solve = new Problem4();
 		solve.doExcercise(999);
