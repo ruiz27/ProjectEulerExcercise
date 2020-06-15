@@ -20,11 +20,12 @@ public class Problem4Funcional {
 				.collect(Collectors.toList());
 		;
 
-		System.out.println("The largest palindrome made from the product of two 3-digit numbers is " + 
-				result.stream()
-				.filter(isPalindromic)
-				.mapToInt(v -> v)
-				.max());
+		Integer l = result.stream()
+		.filter(isPalindromic)
+		.mapToInt(v -> v)
+		.max().getAsInt();
+		
+		System.out.println("The largest palindrome made from the product of two 3-digit numbers is " + l);
 	}
 
 	public static void main(String args[]) {
