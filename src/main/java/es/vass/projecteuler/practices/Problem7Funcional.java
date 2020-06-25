@@ -20,15 +20,6 @@ public class Problem7Funcional {
 		List<Integer> list1 = IntStream.range(1, 200000).map(increment).boxed().collect(Collectors.toList());
 		List<Integer> primes = list1.stream().filter(isPrime).mapToInt(v -> v).boxed().collect(Collectors.toList());
 		return primes.get(stNumber - 1);
-		
-//		int num = 0;int cont = 0;
-//		do {
-//			if(isPrime.test(num++)) {
-//				cont++;
-//			}
-//		}while(cont<stNumber);
-//		
-//		return num;
 
 	}
 
