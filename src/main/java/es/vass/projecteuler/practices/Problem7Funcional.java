@@ -8,18 +8,27 @@ import java.util.stream.IntStream;
 
 /**
  * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see
- * that the 6th prime is 13. What is the 10 001st prime number?
+ * that the 6th prime is 13. 
+ * What is the 10 001 st prime number?
  *
  */
 public class Problem7Funcional {
 
 	public Integer doExcercise(Integer stNumber) {
+
 		IntUnaryOperator increment = p -> p + 1;
-		List<Integer> list1 = IntStream.range(1, 100).map(increment).boxed().collect(Collectors.toList());
-
+		List<Integer> list1 = IntStream.range(1, 1000000).map(increment).boxed().collect(Collectors.toList());
 		List<Integer> primes = list1.stream().filter(isPrime).mapToInt(v -> v).boxed().collect(Collectors.toList());
-
 		return primes.get(stNumber - 1);
+		
+//		int num = 0;int cont = 0;
+//		do {
+//			if(isPrime.test(num++)) {
+//				cont++;
+//			}
+//		}while(cont<stNumber);
+//		
+//		return num;
 
 	}
 
