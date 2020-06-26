@@ -1,6 +1,6 @@
 package es.vass.projecteuler.practices;
 
-import java.util.function.Predicate;
+import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 /**
@@ -12,8 +12,8 @@ public class Problem7Funcional {
 
 	public Integer doExcercise(Integer stNumber) {
 
-		Predicate<Integer> isPrime = p -> !IntStream.rangeClosed(2, p / 2).anyMatch(i -> p % i == 0);
-
+		IntPredicate isPrime = p -> !IntStream.rangeClosed(2, p / 2).anyMatch(i -> p % i == 0);
+		
 		int num = 0;
 		int cont = 0;
 
@@ -25,6 +25,7 @@ public class Problem7Funcional {
 		}
 
 		return num;
+		
 	}
 
 }
