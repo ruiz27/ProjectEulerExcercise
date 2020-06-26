@@ -7,8 +7,8 @@ public class Problem7Test {
 	@Test
 	public void testPrime() {
 		Problem7Funcional problem = new Problem7Funcional();
-//		System.out.println(problem.doExcercise(6));
-		System.out.println(problem.doExcercise(10001));
+		System.out.println(problem.doExcercise(6));
+//		System.out.println(problem.doExcercise(10001));
 	
 	}
 }

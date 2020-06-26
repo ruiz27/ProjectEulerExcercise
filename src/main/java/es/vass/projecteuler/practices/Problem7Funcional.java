@@ -12,20 +12,19 @@ public class Problem7Funcional {
 
 	public Integer doExcercise(Integer stNumber) {
 
+		Predicate<Integer> isPrime = p -> !IntStream.rangeClosed(2, p / 2).anyMatch(i -> p % i == 0);
+
 		int num = 0;
 		int cont = 0;
-		do {
+
+		while (cont <= stNumber) {
+			num++;
 			if (isPrime.test(num)) {
 				cont++;
 			}
-			num++;
-		} while (cont <= stNumber);
+		}
 
 		return num;
 	}
-
-	Predicate<Integer> isPrime = p -> {
-		return !IntStream.rangeClosed(2, p / 2).anyMatch(i -> p % i == 0);
-	};
 
 }
